@@ -1,0 +1,261 @@
+.wrapper {
+  width: 100%;
+}
+.wrapper-1 {
+  position: relative;
+  display: inline-block;
+  margin: -5px;
+  width: 20%;
+  height: 270px;
+  overflow: hidden;
+}
+.container-1 {
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  width: 100%;
+  transform: rotate(-5deg) scale(1.2);
+}
+.container-1 div {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.container-1 div::before {
+  display: block;
+  content: "";
+  width: 30px;
+  height: 30px;
+  background: url(2.png);
+  position: absolute;
+}
+.container-1 div:nth-child(10n+1):before {
+  background: url(2.png) 30px 30px;
+}
+.container-1 div:nth-child(10n+2):before {
+  background: url(2.png) 30px 62px;
+}
+.container-1 div:nth-child(10n+3):before {
+  background: url(2.png) 30px 94px;
+}
+.container-1 div:nth-child(10n+4):before {
+  background: url(2.png) 62px 30px;
+}
+.container-1 div:nth-child(10n+5):before {
+  background: url(2.png) 94px 30px;
+}
+.container-1 div:nth-child(10n+6):before {
+  background: url(2.png) 30px 126px;
+}
+.container-1 div:nth-child(10n+7):before {
+  background: url(2.png) 30px 154px;
+}
+.container-1 div:nth-child(10n+8):before {
+  background: url(2.png) 124px 30px;
+}
+.container-1 div:nth-child(10n+9):before {
+  background: url(2.png) 154px 30px;
+}
+
+.wrapper-2 {
+  position: relative;
+  display: inline-block;
+  margin: -5px;
+  width: 60%;
+  height: 270px;
+  overflow: hidden;
+}
+.container-2 {
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  width: 100%;
+  transform: rotate(-5deg) scale(1.2);
+}
+.container-2 div {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.container-2 div::before {
+  display: block;
+  content: "";
+  width: 30px;
+  height: 30px;
+  background: url(2.png);
+  position: absolute;
+}
+.container-2 div:nth-child(10n+1):before {
+  background: url(2.png) 30px 62px;
+}
+.container-2 div:nth-child(10n+2):before {
+  background: url(2.png) 30px 92px;
+}
+.container-2 div:nth-child(10n+3):before {
+  background: url(2.png) 30px 124px;
+}
+.container-2 div:nth-child(10n+4):before {
+  background: url(2.png) 30px 154px;
+}
+.container-2 div:nth-child(10n+5):before {
+  background: url(2.png) 30px 186px;
+}
+.container-2 div:nth-child(10n+6):before {
+  background: url(2.png) 30px 218px;
+}
+.container-2 div:nth-child(10n+7):before {
+  background: url(2.png) 30px 250px;
+}
+.container-2 div:nth-child(10n+8):before {
+  background: url(2.png) 30px 282px;
+}
+.container-2 div:nth-child(10n+9):before {
+  background: url(2.png) 282px 30px;
+}
+
+.wrapper-3 {
+  position: relative;
+  display: inline-block;
+  width: 20%;
+  height: 270px;
+  overflow: hidden;
+}
+.container-3 {
+  position: absolute;
+  top: -10px;
+  left: 55px;
+  width: 100%;
+  transform: rotate(-5deg) scale(1.2);
+}
+.container-3 div {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.container-3 div::before {
+  display: block;
+  content: "";
+  width: 30px;
+  height: 30px;
+  background: url(2.png);
+  position: absolute;
+}
+.container-3 div:nth-child(10n+1):before {
+  background: url(2.png) 282px 250px;
+}
+.container-3 div:nth-child(10n+2):before {
+  background: url(2.png) 282px 218px;
+}
+.container-3 div:nth-child(10n+3):before {
+  background: url(2.png) 282px 186px;
+}
+.container-3 div:nth-child(10n+4):before {
+  background: url(2.png) 282px 154px;
+}
+.container-3 div:nth-child(10n+5):before {
+  background: url(2.png) 218px 30px;
+}
+.container-3 div:nth-child(10n+6):before {
+  background: url(2.png) 186px 30px;
+}
+.container-3 div:nth-child(10n+7):before {
+  background: url(2.png) 218px 250px;
+}
+.container-3 div:nth-child(10n+8):before {
+  background: url(2.png) 218px 282px;
+}
+.container-3 div:nth-child(10n+9):before {
+  background: url(2.png) 186px 62px;
+}
+.buttons {
+  width: 100%;
+  background-color: white;
+  height: auto;
+}
+.buttons-1, .buttons-2 {
+  width: 100%;
+  background-color: white;
+}
+.buttons-1 {
+  background-color: white;
+  padding: 20px 0 20px 20px;
+  border: 2px solid grey;
+  margin: 5px;
+}
+.buttons-2 {
+  background-color: black;
+  padding: 20px 0 20px 20px;
+  border: 2px solid grey;
+  margin: 5px;
+}
+.pink{
+  color: white;
+  background-color: #c11f90;
+  font-size: 20px;
+  padding: 5px 10px;
+  display: inline-block;
+  border-radius: 3px;
+}
+.green {
+  display: inline-block;
+  background-color: #75bc49;
+  font-size: 10px;
+  border-radius: 3px;
+  padding: 3px;
+}
+.blue {
+  display: inline-block;
+  background-color: #3fa9e2;
+  font-size: 10px;
+  border-radius: 3px;
+  padding: 3px;
+}
+.red {
+  display: inline-block;
+  background-color: #e56271;
+  font-size: 10px;
+  border-radius: 3px;
+  padding: 3px;
+}
+.orange {
+  display: inline-block;
+  background-color: #ef944a;
+  font-size: 10px;
+  border-radius: 3px;
+  padding: 3px;
+}
+.yellow {
+  display: inline-block;
+  background-color: #f2da37;
+  font-size: 10px;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+.desk {
+  font-family: 'Pacifico', cursive;
+  font-size: 30px;
+  font-weight: bold;
+  border: 1px solid black;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  background-color: white;
+  opacity: 0.95;
+}
+.desk::before {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left:0;
+  opacity: 0.9;
+}

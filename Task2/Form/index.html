@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+
+  <form action="" method="post">
+
+    <div class="info">
+      <div>Form Action</div>
+      <div>_mc4wp_action</div>
+      <p>This field will allow your visitors to choose whether they would like to subscribe or unsubscribe</p>
+    </div>
+
+    <label for="text">Field Label</label>
+    <input type="text" placeholder="Form Action" id="text">
+
+    <div class="select">
+      <label for="select" class="label2">Choice Type</label>
+      <select class="choice" name="choice" id="select">
+        <option value="Radio">Radio Buttons</option>
+        <option value="Submit">Submit Buttons</option>
+        <option value="Checkbox">Checkbox</option>
+        <option value="Password">Password</option>
+        <option value="Email">Email</option>
+      </select>
+    </div>
+
+    <p class="textRadio">Choices</p>
+    <div class="radio">
+      <input type="radio" name="sub" value="subscribe" id="subscribe" checked>
+      <label for="subscribe">Subscribe</label><br>
+
+      <input type="radio" name="sub" value="unsubscribe" id="unsubscribe">
+      <label for="unsubscribe">Unsubscribe</label>
+    </div>
+
+    <input type="checkbox" checked id="check">
+    <label for="check" class="checkbox">Wrap in paragraph tags?</label>
+
+    <input type="submit" value="Add to form" class="submit">
+
+  </form>
+
+</body>
+</html>

@@ -38,14 +38,14 @@ header .nav a {
 header div a:hover {
   background: linear-gradient(to top, #4d5a70, #070707);
 }
-main {
+.main {
   width: 90%;
   background-color: #6a8cc1;
   margin: 0 auto;
   background: url(img/2.jpg);
   background-size: 20%;
 }
-main h1 {
+.main h1 {
   font-size: 40px;
   padding: 10px 0;
   text-align: center;
@@ -58,7 +58,7 @@ main h1 {
   font-size: 15px;
 }
 .lorem > p {
-  padding-top: 30px;
+  padding: 30px 20px 30px 20px;
   font-size: 20px;
   text-indent: 25px;
   column-count: 2;
@@ -94,4 +94,11 @@ footer .scroll:hover {
 }
 .info p {
   text-align: right;
+}
+span {
+  font-size: 24px;
+  font-weight: bold;
+}
+span:hover {
+  background-color: yellow;
 }

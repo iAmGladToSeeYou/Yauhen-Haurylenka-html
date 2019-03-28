@@ -17,7 +17,7 @@
     </div>
 
     <label for="text">Field Label</label>
-    <input type="text" placeholder="Form Action" id="text">
+    <input type="text" value="Form Action" id="text">
 
     <div class="select">
       <label for="select" class="label2">Choice Type</label>
@@ -31,13 +31,19 @@
     </div>
 
     <p class="textRadio">Choices</p>
+
     <div class="radio">
-      <input type="radio" name="sub" value="subscribe" id="subscribe" checked>
-      <label for="subscribe">Subscribe</label><br>
+      <input type="radio" name="sub" value="subscribe" id="subscribe">
+      <label for="subscribe"></label>
+      <input type="text" value="subscribe">
+      <input type="reset" value="x">
 
       <input type="radio" name="sub" value="unsubscribe" id="unsubscribe">
-      <label for="unsubscribe">Unsubscribe</label>
+      <label for="unsubscribe"></label>
+      <input type="text" value='unsubscribe'>
+      <input type="reset" value="x">
     </div>
+
 
     <input type="checkbox" checked id="check">
     <label for="check" class="checkbox">Wrap in paragraph tags?</label>

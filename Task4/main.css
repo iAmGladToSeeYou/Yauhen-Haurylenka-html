@@ -1,0 +1,20 @@
+@import url("styles/style_header.css");
+@import url("styles/nav.css");
+@import url("styles/info.css");
+@import url("styles/aboutme.css");
+@import url("styles/skills.css");
+@import url("styles/icons.css");
+@import url("styles/experiences.css");
+@import url("styles/testimonial.css");
+@import url("styles/contact.css");
+@import url("styles/footer.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+}

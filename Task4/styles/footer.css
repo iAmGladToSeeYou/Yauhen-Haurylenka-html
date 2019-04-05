@@ -1,0 +1,44 @@
+.-ot-footer_size {
+  width: 100%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+.-ot-footer__copyrigth {
+  width: 100%;
+  text-align: center;
+  color: grey;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.-ot-footer__link {
+  color: #e4ae58;
+}
+.-ot-footer__link_hover:hover {
+  color: black;
+}
+.-ot-icons_width {
+  width: 100%;
+}
+.-ot-icons_textPos {
+  text-align: center;
+}
+.-ot-icons__link {
+  font-size: 20px;
+  margin-right: 50px;
+  color: grey;
+}
+.-ot-icons__link_hover:hover {
+  color: #e4ae58;
+}
+.fab_hover:hover {
+  transform: scale(1.5);
+}
+@media (max-width: 750px) {
+  .-ot-icons {
+    display: flex;
+    justify-content: space-around;
+  }
+  .-ot-icons__link {
+    margin-right: 0;
+  }
+}

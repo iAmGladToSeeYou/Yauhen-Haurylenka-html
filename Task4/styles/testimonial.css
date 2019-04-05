@@ -1,0 +1,56 @@
+@keyframes blight{
+  0% {
+    color: white;
+  }
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    color: gold;
+    transform: rotate(-360deg);
+  }
+  75% {
+    transform: rotate(180deg);
+  }
+  100%{
+    color: #e9714c;
+  }
+}
+.-ot-testimonial-size {
+  width: 100%;
+  padding: 100px 0;
+}
+.-ot-testimonial-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),
+  url("../images/quotes-bg.jpg") 50% 50%;
+  background-size: cover;
+}
+.-ot-testimonial__star {
+  width: 5%;
+  font-size: 40px;
+  color: white;
+  margin: 0 auto;
+  margin-bottom: 2%;
+  text-align: center;
+}
+.-ot-testimonial__star_hover:hover {
+  animation: blight;
+  animation-duration: 2s;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+}
+.-ot-testimonial__text1 {
+  width: 45%;
+  font-size: 40px;
+  text-align: center;
+  color: white;
+  margin: 0 auto;
+  margin-bottom: 3%;
+}
+.-ot-testimonial__text2 {
+  font-size: 20px;
+  color: grey;
+  width: 45%;
+  margin: 0 auto;
+  text-align:center;
+}

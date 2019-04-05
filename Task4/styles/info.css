@@ -1,0 +1,37 @@
+.-ot-info_size {
+  margin-top: 20%;
+  width: 100%;
+}
+.-ot-info__text_textsmall {
+  font-size: 16px;
+}
+.-ot-info__text_textbig {
+  margin-top: 10px;
+  font-size: 50px;
+}
+.-ot-info__text_bold {
+  font-weight: bold;
+}
+.-ot-info__text_textmedium {
+  font-size: 21.5px;
+  margin-top: 20px;
+}
+.-ot-info__button {
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 30px;
+  margin-top: 45px;
+  border: 3px solid black;
+  padding: 15px 35px;
+  background-color: #f0e2d7;
+  outline: none;
+}
+.-ot-info_button_hover:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  border: 3px solid grey;
+}
+.-ot-info__button_active:active {
+  cursor: pointer;
+  background-color: #efbc69;
+}

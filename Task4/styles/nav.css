@@ -1,0 +1,35 @@
+.-ot-nav_flex {
+  display: flex;
+  justify-content: center;
+}
+.-ot-nav__a {
+  font-size: 20px;
+  color: black;
+  margin: 0 15px;
+}
+.-ot-nav__a_hover:hover {
+  transform: scale(1.2);
+  color: #e4ae58;
+}
+.-ot-nav__a_hover:active {
+  text-decoration: underline;
+}
+
+@media (max-width: 750px) {
+  .-ot-nav_visibility {
+    display:none;
+  }
+  .-ot-nav__a {
+    font-size: 30px;
+    color: white;
+  }
+}
+@media (min-width: 751px) and (max-width: 1150px) {
+  .-ot-nav_visibility {
+    display:none;
+  }
+  .-ot-nav__a {
+    color: white;
+    border-bottom: none;
+  }
+}

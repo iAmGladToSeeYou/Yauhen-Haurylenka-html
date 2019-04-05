@@ -46,7 +46,7 @@
   color: black;
 }
 @media (max-width: 750px) {
-  .-ot-icons_size {
+  .-ot-icons_flex {
     flex-direction: column;
   }
   .-ot-talents_size {

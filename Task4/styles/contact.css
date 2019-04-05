@@ -51,6 +51,7 @@
 }
 .-ot-form__inArea {
   overflow: hidden;
+  resize: none;
 }
 .-ot-form__inArea:-ms-input-placeholder {
   font-family: 'Source Sans Pro', sans-serif;
@@ -129,9 +130,13 @@
   }
   .-ot-myContacts_size {
     width: 100%;
+    padding: 5% 10% 15% 10%;
   }
 }
 @media (min-width: 751px) and (max-width: 1170px) {
+  .-ot-myContacts_size {
+    padding: 5% 5% 15% 5%;
+  }
   .-ot-contact_flex {
     flex-wrap: wrap;
   }

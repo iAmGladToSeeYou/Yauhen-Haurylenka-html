@@ -19,6 +19,7 @@
 .-ot-testimonial-size {
   width: 100%;
   padding: 100px 0;
+  overflow: hidden;
 }
 .-ot-testimonial-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),
@@ -26,12 +27,11 @@
   background-size: cover;
 }
 .-ot-testimonial__star {
-  width: 5%;
+  width: auto;
   font-size: 40px;
-  color: white;
-  margin: 0 auto;
-  margin-bottom: 2%;
   text-align: center;
+  color: white;
+  margin-bottom: 2%;
 }
 .-ot-testimonial__star_hover:hover {
   animation: blight;

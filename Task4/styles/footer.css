@@ -34,11 +34,19 @@
   transform: scale(1.5);
 }
 @media (max-width: 750px) {
+  .-ot-footer_size {
+    padding: 200px 0 200px 0;
+  }
   .-ot-icons {
     display: flex;
     justify-content: space-around;
   }
   .-ot-icons__link {
     margin-right: 0;
+  }
+}
+@media (min-width: 751px) and (max-width: 1170px) {
+  .-ot-footer_size {
+    padding: 200px 0 200px 0;
   }
 }

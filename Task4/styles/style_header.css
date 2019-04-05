@@ -83,7 +83,7 @@
   }
 }
 
-@media (min-width: 751px) and (max-width: 1150px) {
+@media (min-width: 751px) and (max-width: 1450px) {
   .-ot-home__burgerLabel {
     display: inline-block;
     font-size: 40px;

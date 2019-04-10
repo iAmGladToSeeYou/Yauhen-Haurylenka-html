@@ -1,0 +1,58 @@
+.-ot-skill_size {
+  width: 25%;
+  padding: 50px;
+  box-sizing: border-box;
+}
+.-ot-skill_bg {
+  background-color: #e4ae58;
+}
+.-ot-skill__title {
+  color: white;
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+.-ot-skill__items {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.-ot-skill__name {
+  display: inline-block;
+  width: 70%;
+  padding: 5px 0px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+.-ot-skill__name_color {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 28%;
+  color: white;
+  text-align: right;
+}
+.-ot-skill__progress {
+  width: 100%;
+  height: 3px;
+  margin-bottom: 15px;
+}
+.-ot-skill__progress_grad90 {
+  background: linear-gradient(to right, black 90%, white 90%);
+}
+.-ot-skill__progress_grad70 {
+  background: linear-gradient(to right, black 70%, white 70%);
+}
+.-ot-skill__progress_grad80 {
+  background: linear-gradient(to right, black 80%, white 80%);
+}
+@media (max-width: 750px) {
+  .-ot-skill_size {
+    width: 100%;
+  }
+}
+@media (min-width: 751px) and (max-width: 1150px) {
+  .-ot-skill_size {
+    width: 50%;
+  }
+}

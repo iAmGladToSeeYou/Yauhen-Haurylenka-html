@@ -1,0 +1,153 @@
+.-ot-contact_flex {
+  display: flex;
+}
+.-ot-form_size {
+  width: 50%;
+  background:#e9714c;
+  padding: 3% 3%;
+  box-sizing: border-box;
+}
+.-ot-form_flex {
+  display: flex;
+  flex-direction: column;
+}
+.-ot-form__hello {
+  font-size: 42px;
+  color: white;
+  margin-bottom: 10px;
+}
+.-ot-form__info {
+  font-size: 20px;
+  color: white;
+  margin-bottom: 20px;
+}
+.-ot-form__inputName,
+.-ot-form__inEmail,
+.-ot-form__inArea {
+  background-color: #e9714c;
+  border: none;
+  border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 25px;
+  outline: none;
+}
+.-ot-form__inputName:focus,
+.-ot-form__inEmail:focus,
+.-ot-form__inArea:focus {
+  border-bottom: 2px solid rgba(255, 215, 0, 1);
+}
+.-ot-form__inputName::-webkit-input-placeholder,
+.-ot-form__inEmail::-webkit-input-placeholder,
+.-ot-form__inArea::-webkit-input-placeholder{
+  color:white;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.-ot-form__inputName:focus::-webkit-input-placeholder,
+.-ot-form__inEmail:focus::-webkit-input-placeholder,
+.-ot-form__inArea:focus::-webkit-input-placeholder{
+  color: transparent;
+}
+.-ot-form__inArea {
+  overflow: hidden;
+  resize: none;
+}
+.-ot-form__inArea:-ms-input-placeholder {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.-ot-form__submit {
+  width: 45%;
+  padding: 10px 40px;
+  font-size: 20px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+}
+.-ot-form__submit_hover:hover {
+  transform:scale(1.2);
+}
+.-ot-form__submit_active:active {
+  background-color: #f0e2d7;
+}
+.-ot-contact__image {
+  width: 25%;
+  background: url("../images/contact-img.jpg") 50% 50%;
+  background-size: cover;
+}
+.-ot-myContacts_size {
+  width: 25%;
+  padding: 3% 3% 0 3%;
+  box-sizing: border-box;
+}
+.-ot-myContacts_flex {
+  display:flex;
+  flex-direction: column;
+}
+.-ot-myContacts_bg {
+  background-color: black;
+}
+.-ot-myContacts__visit {
+  font-size: 40px;
+  color: white;
+  margin-bottom: 20px;
+}
+.-ot-myContacts__address {
+  font-size: 20px;
+  color: grey;
+  margin-bottom: 40px;
+}
+.-ot-myContacts_info {
+  font-size: 40px;
+  color: white;
+  margin-bottom: 20px;
+}
+.-ot-connect {
+  display: flex;
+  margin-bottom: 20px;
+}
+.-ot-connect__icon {
+  color: grey;
+  font-size: 20px;
+  margin-right: 20px;
+}
+.-ot-connect__link_grey {
+  color: grey;
+}
+.-ot-contact__link_orange {
+  color: #e4ae58;
+}
+@media (max-width: 750px) {
+  .-ot-contact_flex {
+    flex-direction: column;
+  }
+  .-ot-form_size {
+    width: 100%;
+  }
+  .-ot-contact__image {
+    width: 100%;
+    height: 400px;
+  }
+  .-ot-myContacts_size {
+    width: 100%;
+    padding: 5% 10% 15% 10%;
+  }
+}
+@media (min-width: 751px) and (max-width: 1170px) {
+  .-ot-myContacts_size {
+    padding: 5% 5% 15% 5%;
+  }
+  .-ot-contact_flex {
+    flex-wrap: wrap;
+  }
+  .-ot-form_size {
+    width: 100%;
+    padding: 5% 10%;
+  }
+  .-ot-contact__image {
+    width: 50%;
+  }
+  .-ot-myContacts_size {
+    width: 50%;
+  }
+}

@@ -32,6 +32,7 @@
 .-ot-description_flex {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .-ot-work__tittle,
 .-ot-education__tittle {

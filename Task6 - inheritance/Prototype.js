@@ -5,7 +5,7 @@ function AllPlanet(name, radius) {
 }
 AllPlanet.prototype.sizeMoreThenEarth = function() {
   var delta = 0;
-  var result;
+  var result = 0;
   if(this._radiusEarth > this.radius) {
     delta = this._radiusEarth - this.radius;
     result = "Earth's radius more then radius " + this.name + " on " + delta + "km";
@@ -19,18 +19,18 @@ AllPlanet.prototype.sizeMoreThenEarth = function() {
 };
 
 
-function SunPlanet(name, period , radius) {
+function SunSystemPlanet(name, radius , period) {
   AllPlanet.apply(this,arguments);
 
   this._earthPeriod = 365;
   this.period = period;
 };
 
-SunPlanet.prototype = Object.create(AllPlanet.prototype);
-SunPlanet.prototype.constructor = Planet;
+SunSystemPlanet.prototype = Object.create(AllPlanet.prototype);
+SunSystemPlanet.prototype.constructor = SunSystemPlanet;
 
-SunPlanet.prototype.howLongerPeriod = function() {
-  var finish;
+SunSystemPlanet.prototype.howLongerPeriod = function() {
+  var finish = 0;
   if(this.period > this._earthPeriod) {
     finish = "In " + (this.period/this._earthPeriod).toFixed(2) + " times " + this.name + " year, more then Earth's year";
   }else if(this._earthPeriod > this.period) {
@@ -39,24 +39,24 @@ SunPlanet.prototype.howLongerPeriod = function() {
   return finish;
 };
 
-SunPlanet.prototype.sizeMoreThenEarth = function() {
+SunSystemPlanet.prototype.sizeMoreThenEarth = function() {
   var delta = 0;
-  var result;
+  var result = 0;
   if(this._radiusEarth > this.radius) {
-    delta = this._radiusEarth*2 - this.radius*2;
+    delta = this._radiusEarth * 2 - this.radius * 2;
     result = "Earth's diameter more then diameter " + this.name + " on " + delta + "km";
-  }else if (this._radiusEarth*2 === this.radius*2) {
+  }else if (this._radiusEarth * 2 === this.radius * 2) {
     result = "Earth's diameter the same " + this.name + " diameter";
   }else {
-    delta = this.radius*2 - this._radiusEarth*2;
+    delta = this.radius * 2 - this._radiusEarth * 2;
     result =  this.name + " diameter more then Earth's diameter on " + delta + ' km';
   }
   return result;
 };
 
-var mercury = new SunPlanet("Mercury", 88, 2439);
-var mars = new SunPlanet("Mars", 686 , 3389);
-var upiter = new SunPlanet("Upiter", 4328 ,69911);
+var mercury = new SunSystemPlanet("Mercury", 2439, 88);
+var mars = new SunSystemPlanet("Mars",3389, 686);
+var upiter = new SunSystemPlanet("Upiter",69911, 4328);
 
 
-upiter.sizeMoreThenEarth()
+upiter.howLongerPeriod()

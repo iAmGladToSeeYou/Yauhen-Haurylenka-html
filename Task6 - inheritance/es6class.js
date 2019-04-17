@@ -8,7 +8,7 @@ class AllPlanet {
 
   sizeMoreThenEarth() {
     var delta = 0;
-    var result;
+    var result = 0;
     if(this._radiusEarth > this.radius) {
       delta = this._radiusEarth - this.radius;
       result = "Earth's radius more then radius " + this.name + " on " + delta + "km";
@@ -22,8 +22,8 @@ class AllPlanet {
   };
 };
 
-class SunPlanet extends AllPlanet {
-  constructor(name, period, radius) {
+class SunSystemPlanet extends AllPlanet {
+  constructor(name,radius, period) {
     super(name, radius);
 
     this._earthPeriod = 365;
@@ -32,7 +32,7 @@ class SunPlanet extends AllPlanet {
   };
 
   howLongerPeriod() {
-    var finish;
+    var finish = 0;
     if(this.period > this._earthPeriod) {
       finish = "In " + (this.period/this._earthPeriod).toFixed(2) + " times " + this.name + " year, more then Earth's year";
     }else if(this._earthPeriod > this.period) {
@@ -43,7 +43,7 @@ class SunPlanet extends AllPlanet {
 
   sizeMoreThenEarth() {
     var delta = 0;
-    var result;
+    var result = 0;
     if(this._radiusEarth > this.radius) {
       delta = this._radiusEarth*2 - this.radius*2;
       result = "Earth's diameter more then diameter " + this.name + " on " + delta + "km";
@@ -57,7 +57,8 @@ class SunPlanet extends AllPlanet {
   };
 };
 
+var mercury = new SunSystemPlanet("Mercury", 2439, 88);
+var mars = new SunSystemPlanet("Mars", 686 , 3389);
+var upiter = new SunSystemPlanet("Upiter",69911, 4328)
 
-var mars = new SunPlanet("Mars", 686 , 3389);
-
-mars.howLongerPeriod()
+upiter.howLongerPeriod()

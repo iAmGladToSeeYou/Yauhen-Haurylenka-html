@@ -6,7 +6,7 @@ function AllPlanet(name, radius) {
 
   this.sizeMoreThenEarth = function () {
     var delta = 0;
-    var result;
+    var result = 0;
     if(this._radiusEarth > this.radius) {
       delta = this._radiusEarth - this.radius;
       result = "Earth's radius more then radius " + this.name + " on " + delta + "km";
@@ -22,14 +22,14 @@ function AllPlanet(name, radius) {
 
 
 
-function SunPlanet(name, radius, period) {
+function SunSystemPlanet(name, radius, period) {
   AllPlanet.apply(this, arguments);
 
   this._earthPeriod = 365;
   this.period = period;
 
   this.howLongerPeriod = function() {
-    var finish;
+    var finish = 0;
     if(this.period > this._earthPeriod) {
       finish = "In " + (this.period/this._earthPeriod).toFixed(2) + " times " + this.name + " year, more then Earth's year";
     }else if(this._earthPeriod > this.period) {
@@ -50,6 +50,6 @@ function SunPlanet(name, radius, period) {
 
 };
 
-var mars = new SunPlanet("Mars", 3389, 686);
-
-mars.sizeMoreThenEarth()
+var mercury = new SunSystemPlanet("Mercury",2439,88);
+var mars = new SunSystemPlanet("Mars",3389, 686);
+var upiter = new SunSystemPlanet("Upiter",69911,4328);

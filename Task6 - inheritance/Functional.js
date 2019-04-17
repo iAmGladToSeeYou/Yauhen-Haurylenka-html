@@ -18,6 +18,12 @@ function AllPlanet(name, radius) {
     };
     return result;
   };
+
+
+  this.planetSquare = function() {
+    var result = 4 * 3.14 * Math.pow(this.radius, 2);
+    return this.name + " square:" + result + "km²";
+  }
 };
 
 
@@ -45,7 +51,7 @@ function SunSystemPlanet(name, radius, period) {
   var pSizeMoreThenEarth = this.sizeMoreThenEarth;
   this.sizeMoreThenEarth = function () {
     this.run();
-    return pSizeMoreThenEarth.call(this);
+    pSizeMoreThenEarth.call(this);
   };
 
 };
@@ -53,3 +59,6 @@ function SunSystemPlanet(name, radius, period) {
 var mercury = new SunSystemPlanet("Mercury",2439,88);
 var mars = new SunSystemPlanet("Mars",3389, 686);
 var upiter = new SunSystemPlanet("Upiter",69911,4328);
+
+
+mercury.sizeMoreThenEarth()

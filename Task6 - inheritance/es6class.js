@@ -20,6 +20,11 @@ class AllPlanet {
     };
     return result;
   };
+
+  planetSquare() {
+    var result = 4 * 3.14 * Math.pow(this.radius, 2);
+    return this.name + " square:" + result + "km²";
+  };
 };
 
 class SunSystemPlanet extends AllPlanet {
@@ -45,12 +50,12 @@ class SunSystemPlanet extends AllPlanet {
     var delta = 0;
     var result = 0;
     if(this._radiusEarth > this.radius) {
-      delta = this._radiusEarth*2 - this.radius*2;
+      delta = this._radiusEarth * 2 - this.radius * 2;
       result = "Earth's diameter more then diameter " + this.name + " on " + delta + "km";
-    }else if (this._radiusEarth*2 === this.radius*2) {
+    }else if (this._radiusEarth * 2 === this.radius * 2) {
       result = "Earth's diameter the same " + this.name + " diameter";
     }else {
-      delta = this.radius*2 - this._radiusEarth*2;
+      delta = this.radius * 2 - this._radiusEarth * 2;
       result =  this.name + " diameter more then Earth's diameter on " + delta + ' km';
     }
     return result;
@@ -61,4 +66,4 @@ var mercury = new SunSystemPlanet("Mercury", 2439, 88);
 var mars = new SunSystemPlanet("Mars", 686 , 3389);
 var upiter = new SunSystemPlanet("Upiter",69911, 4328)
 
-upiter.howLongerPeriod()
+mercury.sizeMoreThenEarth()

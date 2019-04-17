@@ -18,6 +18,11 @@ AllPlanet.prototype.sizeMoreThenEarth = function() {
   return result;
 };
 
+AllPlanet.prototype.planetSquare = function() {
+  var result = 4 * 3.14 * Math.pow(this.radius, 2);
+  return this.name + " square:" + result + "km²";
+};
+
 
 function SunSystemPlanet(name, radius , period) {
   AllPlanet.apply(this,arguments);
@@ -40,18 +45,8 @@ SunSystemPlanet.prototype.howLongerPeriod = function() {
 };
 
 SunSystemPlanet.prototype.sizeMoreThenEarth = function() {
-  var delta = 0;
-  var result = 0;
-  if(this._radiusEarth > this.radius) {
-    delta = this._radiusEarth * 2 - this.radius * 2;
-    result = "Earth's diameter more then diameter " + this.name + " on " + delta + "km";
-  }else if (this._radiusEarth * 2 === this.radius * 2) {
-    result = "Earth's diameter the same " + this.name + " diameter";
-  }else {
-    delta = this.radius * 2 - this._radiusEarth * 2;
-    result =  this.name + " diameter more then Earth's diameter on " + delta + ' km';
-  }
-  return result;
+  alert("Which planet bigger? Earth or " + this.name + '? And how much?');
+  return AllPlanet.prototype.sizeMoreThenEarth.apply(this,arguments);
 };
 
 var mercury = new SunSystemPlanet("Mercury", 2439, 88);
@@ -59,4 +54,4 @@ var mars = new SunSystemPlanet("Mars",3389, 686);
 var upiter = new SunSystemPlanet("Upiter",69911, 4328);
 
 
-upiter.howLongerPeriod()
+mercury.sizeMoreThenEarth();

@@ -51,7 +51,7 @@ function SunSystemPlanet(name, radius, period) {
   var pSizeMoreThenEarth = this.sizeMoreThenEarth;
   this.sizeMoreThenEarth = function () {
     this.run();
-    pSizeMoreThenEarth.call(this);
+    return pSizeMoreThenEarth.call(this);
   };
 
 };
@@ -61,4 +61,4 @@ var mars = new SunSystemPlanet("Mars",3389, 686);
 var upiter = new SunSystemPlanet("Upiter",69911,4328);
 
 
-mercury.sizeMoreThenEarth()
+upiter.planetSquare()

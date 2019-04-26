@@ -8,7 +8,7 @@ class AllPlanet {
 
   sizeMoreThenEarth() {
     var delta = 0;
-    var result = 0;
+    var result = '';
     if(this._radiusEarth > this.radius) {
       delta = this._radiusEarth - this.radius;
       result = "Earth's radius more then radius " + this.name + " on " + delta + "km";
@@ -37,7 +37,7 @@ class SunSystemPlanet extends AllPlanet {
   };
 
   howLongerPeriod() {
-    var finish = 0;
+    var finish = '';
     if(this.period > this._earthPeriod) {
       finish = "In " + (this.period/this._earthPeriod).toFixed(2) + " times " + this.name + " year, more then Earth's year";
     }else if(this._earthPeriod > this.period) {
@@ -48,7 +48,7 @@ class SunSystemPlanet extends AllPlanet {
 
   sizeMoreThenEarth() {
     var delta = 0;
-    var result = 0;
+    var result = '';
     if(this._radiusEarth > this.radius) {
       delta = this._radiusEarth * 2 - this.radius * 2;
       result = "Earth's diameter more then diameter " + this.name + " on " + delta + "km";

@@ -5,7 +5,7 @@ function AllPlanet(name, radius) {
 }
 AllPlanet.prototype.sizeMoreThenEarth = function() {
   var delta = 0;
-  var result = 0;
+  var result = '';
   if(this._radiusEarth > this.radius) {
     delta = this._radiusEarth - this.radius;
     result = "Earth's radius more then radius " + this.name + " on " + delta + "km";
@@ -35,7 +35,7 @@ SunSystemPlanet.prototype = Object.create(AllPlanet.prototype);
 SunSystemPlanet.prototype.constructor = SunSystemPlanet;
 
 SunSystemPlanet.prototype.howLongerPeriod = function() {
-  var finish = 0;
+  var finish = '';
   if(this.period > this._earthPeriod) {
     finish = "In " + (this.period/this._earthPeriod).toFixed(2) + " times " + this.name + " year, more then Earth's year";
   }else if(this._earthPeriod > this.period) {
@@ -46,7 +46,9 @@ SunSystemPlanet.prototype.howLongerPeriod = function() {
 
 SunSystemPlanet.prototype.sizeMoreThenEarth = function() {
   alert("Which planet bigger? Earth or " + this.name + '? And how much?');
-  return AllPlanet.prototype.sizeMoreThenEarth.apply(this,arguments);
+  var resultLowerCase = AllPlanet.prototype.sizeMoreThenEarth.apply(this,arguments);
+  var result = resultLowerCase.toUpperCase();
+  return result;
 };
 
 var mercury = new SunSystemPlanet("Mercury", 2439, 88);

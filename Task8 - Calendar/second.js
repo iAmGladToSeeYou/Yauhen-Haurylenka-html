@@ -1,76 +1,137 @@
-var arrMonthInfo = [{name:'January', days:31},
-                    {name:'February', days:28, count:0},
-                    {name:'March', days:31},
-                    {name:'April', days:30},
-                    {name:'May', days:31},
-                    {name:'June', days:30},
-                    {name:'Jule', days:31},
-                    {name:'August', days:31},
-                    {name:'September', days:30},
-                    {name:'October', days:31},
-                    {name:'November', days:30},
-                    {name:'December', days:31}];
+var arrMonthName = ['January','February','March','April','May','June','Jule','August','September','October','November','December'];
 
-var month = document.body.querySelector('.month');
-var takeMonth = new Date().getMonth();
-var takeYear = new Date().getFullYear();
-var takeDay = new Date().getDate();
-for(var i = 0; i < arrMonthInfo.length; i++) {
-  if(takeMonth === i) {
-    month.count = i;
-    month.innerHTML = arrMonthInfo[i].name + ' ' + takeYear;
-  };
+var  daysManipulation = {
+  month: 0,
+  year: 0,
+
+  setYear: function () {
+    this.year = new Date().getFullYear();
+    return this;
+  },
+
+
+  setMonth: function () {
+    this.month = new Date().getMonth();
+    return this;
+  },
+
+
+  infoForRenderMonth:  function() {
+    for(var i = 0; i < arrMonthName.length; i++) {
+      if( i === this.month) {
+        return [arrMonthName[i], this.year];
+      };
+    };
+  },
+
+
+  monthPlus: function() {
+    this.month++;
+    if (this.month === 12) {
+      this.month = 0;
+      this.year ++;
+    };
+    return [this.month, this.year]
+  },
+
+
+  monthMinus: function () {
+    this.month--;
+    if(this.month === -1) {
+      this.month = 11;
+      this.year--;
+    };
+    return [this.month, this.year]
+  },
+
+
+  currentDaysTemplate: function() {
+    var arrDays = [];
+    var index = new Date(this.year, this.month, 1).getDay();
+
+    if(index === 1 || index === 0) {
+      index += 6;
+    }else {
+      index -= 1;
+    };
+
+    var day = new Date(this.year, this.month, 0).getDate();
+    var daysCount = new Date(this.year, this.month + 1 , 0).getDate();
+
+    for(var i = index - 1; i >= 0; i--) {
+      arrDays[i] = day;
+      day--;
+    };
+    day = 1;
+
+    for(var i = index; i < daysCount + index; i++) {
+      arrDays[i] = day;
+      day++
+    };
+
+    var days = 1;
+    for(var i = (daysCount + index); i < 42; i++) {
+      arrDays.push(days);
+      days++;
+    };
+    
+    arrDays.index = index;
+    arrDays.daysCount = daysCount + index;
+    return arrDays;
+  },
+
+  currentDay: function () {
+    var month = new Date().getMonth();
+    var year = new Date().getFullYear();
+    var day = new Date().getDate();
+    if(month === this.month && year === this.year) {
+      return [true,day];
+    };
+    return false;
+  }
+
 };
 
+daysManipulation.setYear().setMonth();
 
-var daysNumbers = document.body.querySelectorAll('.daysData');
-var firstDayIndex = new Date(takeYear, takeMonth, 1).getDay();
-var indexForPrevMonth = firstDayIndex;
+var render = {
 
+  renderMonth: function() {
+    var info = daysManipulation.infoForRenderMonth();
+    var elem = document.body.querySelector('.month');
+    elem.innerHTML = info[0] + ' ' + info[1];
+    elem.style.color = 'white';
+    elem.style.fontSize = '36px';
+  },
 
-var renderCurrentMonth = function () {
+  renderDays: function() {
 
-  if(firstDayIndex === 1) {
-    firstDayIndex += 7;
-  }else if (firstDayIndex === 0) {
-    firstDayIndex = 7;
-  };
+    var days = daysManipulation.currentDaysTemplate();
+    var currentDay = daysManipulation.currentDay();
+    var elem = document.body.querySelectorAll('.daysData');
 
-  for(var i = 1; i <= arrMonthInfo[month.count].days; i++) {
-    daysNumbers[firstDayIndex-1].setAttribute('value', i);
-    if(i === takeDay) {
-      daysNumbers[firstDayIndex-1].style.backgroundColor = 'rgba(57, 117, 219, 0.6)';
-      daysNumbers[firstDayIndex-1].style.textShadow = '3px 3px 1px black';
+    for(var i = 0; i < elem.length; i ++) {
+      elem[i].style.backgroundColor = 'transparent';
+
+      if(i >= days.index && i < days.daysCount) {
+        elem[i].style.color = 'white';
+        if(currentDay[0] === true) {
+
+          elem[days.index + currentDay[1]].style.backgroundColor = 'red';
+        };
+
+      }else {
+        elem[i].style.color = 'grey';
+
+      };
+      elem[i].setAttribute('value', days[i]);
     };
-    firstDayIndex++;
-  };
+  }
 
-}();
+};
 
-var renderAnotherMonth = function() {
-
-  if(indexForPrevMonth === 1) {
-    indexForPrevMonth += 7;
-  };
-
-  var days = arrMonthInfo[month.count-1].days;
-
-  for(var i = indexForPrevMonth - 2; i >= 0; i--) {
-    daysNumbers[i].setAttribute('value', days);
-    daysNumbers[i].style.color = '#97a6bf';
-    days--;
-  };
-
-  days = 1;
-
-  for(var i = firstDayIndex - 1; i < daysNumbers.length; i++ ) {
-    daysNumbers[i].setAttribute('value', days);
-    daysNumbers[i].style.color = '#97a6bf';
-    days++;
-  };
-
-}();
-
+render.renderMonth();
+render.renderDays();
 
 var eventsForArrow = {
   sizeDown: function() {
@@ -89,120 +150,19 @@ var eventsForArrow = {
     this.style.cursor = 'pointer';
   },
 
-  monthChangeMinus: function() {
-    month.count--;
-    if(month.count === -1) {
-      month.count = 11;
-      takeYear--;
-    }
-    month.innerHTML = arrMonthInfo[month.count].name + ' ' + takeYear;
-
-    var firstDayIndex = new Date(takeYear,month.count,1 ).getDay();
-    var indexForPrevMonth = firstDayIndex;
-
-    var renderCurrentMonthMinus = function () {
-      if(firstDayIndex === 1) {
-        firstDayIndex += 7;
-      }else if (firstDayIndex === 0) {
-        firstDayIndex = 7;
-      };
-
-      for(var i = 1; i <= arrMonthInfo[month.count].days; i++) {
-        daysNumbers[firstDayIndex-1].setAttribute('value', i);
-        daysNumbers[firstDayIndex-1].style.color = 'white';
-        daysNumbers[firstDayIndex-1].style.backgroundColor = 'transparent';
-        daysNumbers[firstDayIndex-1].style.textShadow = 'none';
-        firstDayIndex++;
-      };
-    }();
-
-    var renderAnotherMonthMinus = function () {
-      if(indexForPrevMonth === 1) {
-        indexForPrevMonth += 7;
-      };
-
-      var days = 0;
-      if(month.count === 0) {
-        days = arrMonthInfo[11].days;
-      }else {
-        days = arrMonthInfo[month.count-1].days;
-      };
-
-      for(var i = indexForPrevMonth - 2; i >= 0; i--) {
-        daysNumbers[i].setAttribute('value', days);
-        daysNumbers[i].style.color = '#97a6bf';
-        days--;
-      };
-
-      days = 1;
-
-      for(var i = firstDayIndex - 1; i < daysNumbers.length; i++ ) {
-        daysNumbers[i].setAttribute('value', days);
-        daysNumbers[i].style.color = '#97a6bf';
-        days++;
-      };
-
-    }();
+  monthChangePlus: function() {
+    daysManipulation.monthPlus();
+    render.renderMonth();
+    render.renderDays();
 
   },
 
-  monthChangePlus: function() {
-    month.count++;
-    if(month.count === 12) {
-      month.count = 0;
-      takeYear++;
-    }
-    month.innerHTML = arrMonthInfo[month.count].name + ' ' + takeYear;
-
-    var firstDayIndex = new Date(takeYear,month.count,1 ).getDay();
-    var indexForPrevMonth = firstDayIndex;
-
-    var renderCurrentMonthMinus = function () {
-      if(firstDayIndex === 1) {
-        firstDayIndex += 7;
-      }else if (firstDayIndex === 0) {
-        firstDayIndex = 7;
-      }
-
-      for(var i = 1; i <= arrMonthInfo[month.count].days; i++) {
-        daysNumbers[firstDayIndex-1].setAttribute('value', i);
-        daysNumbers[firstDayIndex-1].style.color = 'white';
-        daysNumbers[firstDayIndex-1].style.backgroundColor = 'transparent';
-        daysNumbers[firstDayIndex-1].style.textShadow = 'none';
-        firstDayIndex++;
-      };
-    }();
-
-    var renderAnotherMonthMinus = function () {
-      if(indexForPrevMonth === 1) {
-        indexForPrevMonth += 7;
-      }else if (firstDayIndex === 0) {
-        firstDayIndex = 7;
-      };
-
-      var days = 0;
-      if(month.count === 0) {
-        days = arrMonthInfo[11].days;
-      }else {
-        days = arrMonthInfo[month.count-1].days;
-      };
-
-      for(var i = indexForPrevMonth - 2; i >= 0; i--) {
-        daysNumbers[i].setAttribute('value', days);
-        daysNumbers[i].style.color = '#97a6bf';
-        days--;
-      };
-
-      days = 1;
-
-      for(var i = firstDayIndex - 1; i < daysNumbers.length; i++ ) {
-        daysNumbers[i].setAttribute('value', days);
-        daysNumbers[i].style.color = '#97a6bf';
-        days++;
-      };
-
-    }();
+  monthChangeMinus: function() {
+    daysManipulation.monthMinus();
+    render.renderMonth();
+    render.renderDays();
   }
+
 
 };
 

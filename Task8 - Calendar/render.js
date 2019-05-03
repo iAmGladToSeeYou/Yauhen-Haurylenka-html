@@ -6,19 +6,27 @@ function CreateElements(tag, className) {
   return elem;
 }
 
+var divPage = CreateElements('div', 'main');
+divPage.style.width = '100%';
+divPage.style.height = '750px';
+divPage.style.background = 'url(124.jpg) 50% 50% no-repeat';
+divPage.style.backgroundSize = 'cover';
+divPage.style.paddingTop = '50px';
+document.body.insertBefore(divPage, document.body.firstChild)
+
 
 var divContainer = CreateElements('div', 'container');
 divContainer.style.background = 'url(123.jpg) 50% 50% no-repeat';
 divContainer.style.backgroundSize = 'cover';
 divContainer.style.width = '420px';
 divContainer.style.height = '600px';
-divContainer.style.margin = ' 200px auto 0px auto';
-divContainer.style.border = '2px solid black';
+divContainer.style.margin = ' 0px auto 0px auto';
+divContainer.style.border = '2px solid yellow';
 divContainer.style.display = 'flex';
 divContainer.style.flexDirection = 'column';
 divContainer.style.boxSizing = 'contant-box';
 divContainer.style.position = 'relative';
-document.body.insertBefore(divContainer, document.body.firstChild);
+divPage.appendChild(divContainer);
 
 var divMonthContainer = CreateElements('div', 'monthContainer');
 divMonthContainer.style.width = '100%';
@@ -113,13 +121,15 @@ divContainer.appendChild(divDaysInfo);
 
 
 var daysInfo = CreateElements('div', 'daysinfo');
-daysInfo.style.width = '150px';
+daysInfo.style.width = '160px';
 daysInfo.style.height = '300px';
 daysInfo.style.position = 'absolute';
 daysInfo.style.top = '100px';
-daysInfo.style.left = '100%';
-daysInfo.style.background = 'url(123.jpg) 50% 50% no-repeat';
+daysInfo.style.left = '422px';
+daysInfo.style.background = 'linear-gradient(to top, rgba(96, 100, 143, 0.3), rgba(96, 100, 143, 0.6))';
+daysInfo.style.border = '1px solid yellow';
+daysInfo.style.borderLeft = 'none';
 daysInfo.style.backgroundSize = 'cover';
 daysInfo.style.display = 'none';
-daysInfo.style.boxSizing = 'border-box'
+daysInfo.style.boxSizing = 'border-box';
 divContainer.appendChild(daysInfo);

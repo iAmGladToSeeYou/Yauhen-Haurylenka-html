@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "outDir":"Front/js",
+    "target": "es6",
+    "removeComments": true
+  }
+}

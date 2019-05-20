@@ -1,0 +1,110 @@
+.main {
+  width: 100%;
+  height: 750px;
+  background: url(../images/bg_page.jpg) 50% 50% no-repeat;
+  background-size: cover;
+  padding-top: 50px;
+}
+.container {
+  width: 420px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  background: url(../images/bg_calendar.jpg) 50% 50% no-repeat;
+  background-size: cover;
+  margin: 0px auto 0px auto;
+  border: 2px solid yellow;
+  box-sizing: content-box;
+  position: relative;
+}
+.monthContainer {
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid yellow;
+  display: flex;
+  box-sizing: border-box;
+}
+.month {
+  width: 80%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 36px;
+  text-align: center;
+  text-shadow: 2px 2px 2px blue;
+}
+.arrowRigth, .arrowLeft {
+  width: 10%;
+  height: 50px;
+  font-size: 40px;
+  color: white;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.arrowRigth_down, .arrowLeft_down {
+  font-size: 30px;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+.fas {
+  width: 100%;
+  height: 100%;
+}
+.daysNameContainer {
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid yellow;
+  box-sizing: border-box;
+  display: flex;
+}
+.daysNameContainer_name {
+  width: 60px;
+  height: 50px;
+  font-size: 20px;
+  box-sizing: border-box;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  text-shadow: 3px 3px 2px blue;
+}
+.daysNumberContainer {
+  width: 100%;
+  height: 360px;
+  border-bottom: 2px solid yellow;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+.daysNumberContainer_number {
+  width: 60px;
+  height: 60px;
+  font-size: 22px;
+  text-align: center;
+  padding-top: 15px;
+  color: grey;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 1px solid rgba(144, 158, 181, 0.6);
+}
+.daysNumberContainer_number_color {
+  color: white!important;
+}
+.daysNumberContainer_number_bg {
+  background-color: red;
+}
+.container_weather {
+  width: 160px;
+  height: 360px;
+  position: absolute;
+  left: 422px;
+  top: 100px;
+  background: linear-gradient(to top, rgba(96, 100, 143, 0.3), rgba(96, 100, 143, 0.6));
+  color: white;
+  font-size: 60px;
+  text-align: center;
+  padding-top: 130px;
+  border: 1px solid yellow;
+  border-left: none;
+  box-sizing: border-box;
+}

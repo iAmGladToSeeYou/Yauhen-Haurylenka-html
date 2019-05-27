@@ -1,4 +1,13 @@
-class Calendar {
+interface IController {
+  model: GetArrDays;
+  render: Render;
+
+  nextMonth():void;
+  prevMonth():void;
+  addEvents(selector:string, eventName:string, functionName): void;
+}
+
+class Calendar implements IController{
   model: GetArrDays;
   render: Render;
 
@@ -38,12 +47,12 @@ class Calendar {
   }
 
   weatherShow(event): void {
-    let weatherContainer = document.querySelector('.container_weather') as HTMLElement;
+    let weatherContainer:HTMLElement = document.querySelector('.container_weather');
     weatherContainer.innerHTML = event.target.innerHTML;
   }
 
   addEvents(selector:string, eventName:string, functionName): void {
-    let elem = document.querySelector(selector) as HTMLElement;
+    let elem:HTMLElement = document.querySelector(selector);
     elem.addEventListener(eventName, functionName);
   }
 

@@ -1,17 +1,29 @@
-class Render {
+interface IView {
   parent: string;
   arrDays: number[];
   monthAndYear: string;
-  monthInfo: {
-    firstDayIndex: number, today: boolean, currentData: number,lastDayIndex: number
-  };
-  private arrNameDays:string[];
+  monthInfo: IMonthInfo<number>;
+  readonly arrNameDays: string[];
 
-  constructor(parent: string, arrDays: number[], monthAndYear:string, monthInfo:{ firstDayIndex: number,
-              today: boolean,
-              currentData: number,
-              lastDayIndex: number
-  }) {
+  createElement(element:string, className: string, classNameParent: string):HTMLElement;
+  renderDateMonth():void;
+}
+
+interface IMonthInfo<T> {
+  firstDayIndex:T;
+  today:T;
+  currentData:T;
+  lastDayIndex:T;
+}
+
+class Render implements IView{
+  parent: string;
+  arrDays: number[];
+  monthAndYear: string;
+  monthInfo: IMonthInfo<number>;
+  readonly arrNameDays:string[];
+
+  constructor(parent: string, arrDays: number[], monthAndYear:string, monthInfo:IMonthInfo<number>) {
     this.parent = parent;
     this.arrDays = arrDays;
     this.monthAndYear = monthAndYear;
@@ -20,41 +32,41 @@ class Render {
   }
 
   createElement(element: string, className: string, classNameParent: string):HTMLElement {
-    let parentElem = document.querySelector(classNameParent) as HTMLElement;
-    let currentElement = document.createElement(element) as HTMLElement;
+    let parentElem:HTMLElement = document.querySelector(classNameParent);
+    let currentElement:HTMLElement = document.createElement(element);
     currentElement.classList.add(className);
     parentElem.appendChild(currentElement);
     return currentElement;
   }
 
   addAllElements(): void {
-    let container = this.createElement('div', 'container', '.main');
+    let container:HTMLElement = this.createElement('div', 'container', '.main');
 
-    let monthContainer = this.createElement('div', 'monthContainer', '.container');
+    let monthContainer:HTMLElement  = this.createElement('div', 'monthContainer', '.container');
 
-    let arrowLeft = this.createElement('div', 'arrowLeft', '.monthContainer');
+    let arrowLeft:HTMLElement  = this.createElement('div', 'arrowLeft', '.monthContainer');
     arrowLeft.innerHTML ='<i class="fas fa-arrow-alt-circle-left"></i>';
 
-    let month = this.createElement('div', 'month', '.monthContainer');
+    let month:HTMLElement  = this.createElement('div', 'month', '.monthContainer');
     month.innerHTML = this.monthAndYear;
 
-    let arrowRigth = this.createElement('div', 'arrowRigth', '.monthContainer');
+    let arrowRigth:HTMLElement  = this.createElement('div', 'arrowRigth', '.monthContainer');
     arrowRigth.innerHTML ='<i class="fas fa-arrow-alt-circle-right"></i>';
 
-    let daysNameContainer = this.createElement('div', 'daysNameContainer', '.container');
+    let daysNameContainer:HTMLElement  = this.createElement('div', 'daysNameContainer', '.container');
 
     for(let i:number = 0; i < this.arrNameDays.length; i++) {
-      let dayName = this.createElement('div', 'daysNameContainer_name', '.daysNameContainer');
+      let dayName:HTMLElement  = this.createElement('div', 'daysNameContainer_name', '.daysNameContainer');
       dayName.innerHTML = this.arrNameDays[i];
     }
 
-    let daysNumberContainer = this.createElement('div', 'daysNumberContainer', '.container');
+    let daysNumberContainer:HTMLElement  = this.createElement('div', 'daysNumberContainer', '.container');
 
     for(let i:number = 0; i < this.arrDays.length; i++) {
-      let daysCount = this.createElement('div', 'daysNumberContainer_number', '.daysNumberContainer');
+      let daysCount:HTMLElement  = this.createElement('div', 'daysNumberContainer_number', '.daysNumberContainer');
     }
 
-    let containerWeather = this.createElement('div', 'container_weather', '.container');
+    let containerWeather:HTMLElement  = this.createElement('div', 'container_weather', '.container');
   }
 
   renderDateMonth():void {
@@ -71,10 +83,10 @@ class Render {
       day[this.monthInfo.currentData].classList.add('daysNumberContainer_number_bg');
     }
 
-    let month = document.querySelector('.month') as HTMLElement;
+    let month:HTMLElement = document.querySelector('.month');
     month.innerHTML = this.monthAndYear + '';
 
-    let weather = document.querySelector('.container_weather') as HTMLElement;
+    let weather:HTMLElement = document.querySelector('.container_weather');
     weather.innerHTML = new Date().getDate() + '';
   }
 
